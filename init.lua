@@ -18,6 +18,8 @@ vim.lsp.enable("ruff")
 vim.lsp.enable("pyright")
 
 ---- KEYMAP
+vim.keymap.set({ "n", "x" }, "<Down>", "gj")
+vim.keymap.set({ "n", "x" }, "<Up>", "gk")
 -- LSP
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
 vim.keymap.set('n', 'gb', ":BufferLinePick<CR>", {desc = "Go to buffer"})
