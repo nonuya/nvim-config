@@ -13,9 +13,11 @@ return {
         vscTabOther = "#090909",
         vscTabOutside = "#050505",
 
-        vscLeftDark = "#050505",
+        vscLeftDark = "#0F0F0F",
         vscLeftMid = "#101010",
         vscLeftLight = "#1A1A1A",
+
+        vscPopupBack = '#000000',
       }
     })
 

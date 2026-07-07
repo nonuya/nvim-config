@@ -22,8 +22,25 @@ vim.keymap.set({ "n", "x" }, "<Down>", "gj")
 vim.keymap.set({ "n", "x" }, "<Up>", "gk")
 -- LSP
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
+
+-- Buffer
+vim.keymap.set("n", "<leader>x", function()
+  require("mini.bufremove").delete(0, false)
+end, { desc = "Delete buffer" })
+
+vim.keymap.set("n", "<leader>X", function()
+  vim.cmd("tabonly")
+
+  local current = vim.api.nvim_get_current_buf()
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    if buf ~= current and vim.bo[buf].buftype == "" then
+      require("mini.bufremove").delete(buf, false)
+    end
+  end
+end, { desc = "Close other tabs and buffers" })
 vim.keymap.set('n', 'gb', ":BufferLinePick<CR>", {desc = "Go to buffer"})
-vim.keymap.set('n', '<leader>x', ":bp | bd #<CR>", {desc = "Close current buffer"})
+-------------------
+
 vim.keymap.set("n", "<leader>fa", function()
     vim.lsp.buf.format({ async = true })
 end, {desc = "Format all"})
