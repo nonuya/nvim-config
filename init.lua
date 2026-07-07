@@ -67,7 +67,10 @@ end)
 vim.keymap.set("n", "<C-s>", ":w<CR>", { silent = true })
 
 -- Tree
-vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<CR>", { silent = true })
+-- Focus
+vim.keymap.set("n", "<leader>e", "<cmd>Neotree reveal toggle<CR>", { silent = true })
+-- Not Focus
+vim.keymap.set("n", "<leader>E", "<cmd>Neotree toggle<CR>", { silent = true })
 
 vim.keymap.set("n", "<C-Down>", "<C-e>")
 vim.keymap.set("n", "<C-Up>", "<C-y>")

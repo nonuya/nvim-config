@@ -18,6 +18,21 @@ return {
         vscLeftLight = "#1A1A1A",
 
         vscPopupBack = '#000000',
+      },
+      group_overrides = {
+        cmakeKWtry_compile = {
+          fg = "#569CD6",
+          bg = "none",
+          bold = true,
+        },
+
+        cmakeArguments = {
+          bg = "none",
+        },
+
+        ModeMsg = {
+          bg = "none",
+        },
       }
     })
 
